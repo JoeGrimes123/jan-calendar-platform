@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import prisma from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 
-export async function createEventTypeAction(prevState: any, formData: FormData) {
+export async function createEventTypeAction(prevState: unknown, formData: FormData) {
     const session = await auth();
     if (!session?.user?.id) {
         return redirect("/");
@@ -51,7 +51,7 @@ export async function createEventTypeAction(prevState: any, formData: FormData) 
 
 export async function updateEventTypeAction(
     eventTypeId: string,
-    prevState: any,
+    prevState: unknown,
     formData: FormData
 ) {
     const session = await auth();
